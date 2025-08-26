@@ -2,11 +2,10 @@
 import speech_recognition as sr
 import pyttsx3
 
-engine = pyttsx3.init()
-voices = engine.getProperty("voices")
-engine.setProperty("voice", voices[0].id)
-
 def falar(texto):
+    engine = pyttsx3.init()
+    voices = engine.getProperty("voices")
+    engine.setProperty("voice", voices[0].id)
     texto_para_falar = texto.replace("I.R.I.S", "Íris")
     engine.say(texto_para_falar)
     engine.runAndWait()
